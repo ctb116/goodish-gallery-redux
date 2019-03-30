@@ -7,7 +7,21 @@ import "../styles/homepage.css";
 class Homepage extends Component {
   state = {
     images: getImages(),
-    filter: { commission: false, fanart: false, mature: false }
+    filter: { commission: false, fanart: false, mature: true },
+    filteredImages: []
+  };
+
+  filterImages = () => {
+    let images = this.state.images;
+    let filter = this.state.filter;
+    for (var key in filter) {
+      if (filter[key] === true) {
+        let filterImages = images.filter(image => image[key] !== false);
+        return filterImages;
+      } else {
+        return images;
+      }
+    }
   };
 
   handleCheckboxChange = name => {
@@ -22,6 +36,8 @@ class Homepage extends Component {
 
   render() {
     console.log(this.state.filter);
+    let images = this.filterImages();
+    console.log(images);
     return (
       <React.Fragment>
         <CheckboxList
@@ -29,8 +45,13 @@ class Homepage extends Component {
           onCheckboxChange={this.handleCheckboxChange}
         />
         <StackGrid columnWidth={"30%"}>
-          {this.state.images.map(image => (
-            <img src={image.url} alt={image.name} style={{ width: "100%" }} />
+          {images.map(image => (
+            <img
+              src={image.url}
+              alt={image.name}
+              style={{ width: "100%" }}
+              key={image.id}
+            />
           ))}
         </StackGrid>
       </React.Fragment>
