@@ -1,19 +1,43 @@
 import React, { Component } from "react";
 import StackGrid from "react-stack-grid";
 import { getImages } from "../services/imageService";
+import ReactModal from "./prebuilt/ReactModal";
 import CheckboxList from "./CheckboxList";
+import Image from "./Image";
+
 import "../styles/homepage.css";
 
 class Homepage extends Component {
   state = {
     images: getImages(),
+    viewImage: {
+      id: 0,
+      url: "",
+      name: "",
+      description: "",
+      commission: false,
+      fanart: false,
+      mature: false
+    },
     filter: { commission: false, fanart: false, mature: true },
-    filteredImages: []
+    modal: false
+  };
+
+  toggle = () => {
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }));
+  };
+
+  handleView = image => {
+    this.toggle();
+    this.setState({ viewImage: image });
   };
 
   filterImages = () => {
     let images = this.state.images;
     let filter = this.state.filter;
+
     for (var key in filter) {
       if (filter[key] === true) {
         let filterImages = images.filter(image => image[key] !== false);
@@ -35,25 +59,24 @@ class Homepage extends Component {
   };
 
   render() {
-    console.log(this.state.filter);
     let images = this.filterImages();
-    console.log(images);
+    console.log(this.state.filter);
     return (
       <React.Fragment>
         <CheckboxList
           checkboxObj={this.state.filter}
           onCheckboxChange={this.handleCheckboxChange}
         />
-        <StackGrid columnWidth={"30%"}>
+        <StackGrid className="hover" columnWidth={"30%"}>
           {images.map(image => (
-            <img
-              src={image.url}
-              alt={image.name}
-              style={{ width: "100%" }}
-              key={image.id}
-            />
+            <Image image={image} onView={this.handleView} key={image.id} />
           ))}
         </StackGrid>
+        <ReactModal
+          image={this.state.viewImage}
+          modal={this.state.modal}
+          onToggle={this.toggle}
+        />
       </React.Fragment>
     );
   }
