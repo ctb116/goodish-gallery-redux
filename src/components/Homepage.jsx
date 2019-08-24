@@ -62,11 +62,14 @@ class Homepage extends Component {
     let images = this.filterImages();
     console.log(this.state.filter);
     return (
-      <React.Fragment>
-        <CheckboxList
-          checkboxObj={this.state.filter}
-          onCheckboxChange={this.handleCheckboxChange}
-        />
+      <div className="homepage">
+        <p>Giant Wall of Art</p>
+        <div className="homepage-checkboxes">
+          <CheckboxList
+            checkboxObj={this.state.filter}
+            onCheckboxChange={this.handleCheckboxChange}
+          />
+        </div>
         <StackGrid className="hover" columnWidth={"30%"}>
           {images.map(image => (
             <Image image={image} onView={this.handleView} key={image.id} />
@@ -77,7 +80,7 @@ class Homepage extends Component {
           modal={this.state.modal}
           onToggle={this.toggle}
         />
-      </React.Fragment>
+      </div>
     );
   }
 }
