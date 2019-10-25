@@ -4,7 +4,7 @@ const Image = props => {
   return (
     <React.Fragment>
       <img
-        src={props.image.url}
+        src={process.env.PUBLIC_URL + props.image.src}
         alt={props.image.name}
         style={{ width: "100%", borderRadius: 5 }}
         onClick={() => props.onView(props.image)}

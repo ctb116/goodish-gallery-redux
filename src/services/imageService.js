@@ -1,52 +1,34 @@
 const images = [
   {
-    id: 7,
-    url: "https://i.imgur.com/2Biufiu.png",
-    name: "Life in the Coop",
+    id: 5,
+    src: "/assets/SpecterDaughter.jpg",
+    name: "Specter and Daughter",
     description: "string",
     commission: false,
     fanart: true,
     mature: false
   },
   {
-    id: 6,
-    url: "https://i.imgur.com/lZ7nKFg.png",
-    name: "Glittering Slugs",
-    description: "string",
-    commission: false,
-    fanart: false,
-    mature: false
-  },
-  {
-    id: 5,
-    url: "https://i.imgur.com/tMeGoPl.png",
-    name: "The Dogs",
-    description: "string",
-    commission: false,
-    fanart: false,
-    mature: false
-  },
-  {
     id: 4,
-    url: "https://i.imgur.com/8orWERp.png",
-    name: "The Duchy's Daughter",
+    src: "/assets/shovelShield.jpg",
+    name: "Let's Go Digging For Treasure!",
     description: "string",
     commission: false,
-    fanart: false,
+    fanart: true,
     mature: false
   },
   {
     id: 3,
-    url: "https://i.imgur.com/H8tSK3M.png",
-    name: "Pitcher Trap",
+    src: "/assets/magicStarting.png",
+    name: "Magic is Starting",
     description: "string",
-    commission: true,
+    commission: false,
     fanart: false,
     mature: false
   },
   {
     id: 2,
-    url: "https://i.imgur.com/XTuAfhH.png",
+    src: "/assets/IssykaHorse.png",
     name: "Issylan Horse",
     description: "string",
     commission: true,
@@ -55,16 +37,16 @@ const images = [
   },
   {
     id: 1,
-    url: "https://i.imgur.com/fihlX4i.png",
-    name: "Komodo Laser",
+    src: "/assets/coupleRelaxing.png",
+    name: "Couple Relaxing",
     description: "string",
-    commission: true,
+    commission: false,
     fanart: false,
     mature: false
   },
   {
     id: 0,
-    url: "https://i.imgur.com/WHnqjbP.png",
+    src: "/assets/IssykaMonkey.png",
     name: "Spiked-Tailed Monkey",
     description: "string",
     commission: true,

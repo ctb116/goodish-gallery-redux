@@ -16,7 +16,7 @@ class ReactModal extends Component {
         </ModalHeader>
         <ModalBody>
           <img
-            src={this.props.image.url}
+            src={this.props.image.src}
             alt={this.props.image.name}
             style={{ width: "100%" }}
           />

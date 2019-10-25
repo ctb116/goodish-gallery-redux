@@ -12,7 +12,7 @@ class Homepage extends Component {
     images: getImages(),
     viewImage: {
       id: 0,
-      url: "",
+      src: "",
       name: "",
       description: "",
       commission: false,
