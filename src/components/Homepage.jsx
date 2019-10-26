@@ -4,6 +4,7 @@ import { getImages } from "../services/imageService";
 import ReactModal from "./prebuilt/ReactModal";
 import CheckboxList from "./CheckboxList";
 import Image from "./Image";
+import Banner from "./Banner";
 
 import "../styles/homepage.css";
 
@@ -62,25 +63,28 @@ class Homepage extends Component {
     let images = this.filterImages();
     console.log(this.state.filter);
     return (
-      <div className="homepage">
-        <p>Giant Wall of Art</p>
-        <div className="homepage-checkboxes">
-          <CheckboxList
-            checkboxObj={this.state.filter}
-            onCheckboxChange={this.handleCheckboxChange}
+      <React.Fragment>
+        <Banner />
+        <div className="homepage">
+          <p>Giant Wall of Art</p>
+          <div className="homepage-checkboxes">
+            <CheckboxList
+              checkboxObj={this.state.filter}
+              onCheckboxChange={this.handleCheckboxChange}
+            />
+          </div>
+          <StackGrid className="hover" columnWidth={"30%"}>
+            {images.map(image => (
+              <Image image={image} onView={this.handleView} key={image.id} />
+            ))}
+          </StackGrid>
+          <ReactModal
+            image={this.state.viewImage}
+            modal={this.state.modal}
+            onToggle={this.toggle}
           />
         </div>
-        <StackGrid className="hover" columnWidth={"30%"}>
-          {images.map(image => (
-            <Image image={image} onView={this.handleView} key={image.id} />
-          ))}
-        </StackGrid>
-        <ReactModal
-          image={this.state.viewImage}
-          modal={this.state.modal}
-          onToggle={this.toggle}
-        />
-      </div>
+      </React.Fragment>
     );
   }
 }

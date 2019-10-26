@@ -1,0 +1,6 @@
+.banner-crop img {
+  object-fit: cover;
+  object-position: 50% 35%;
+  height: 375px;
+  width: 100%;
+}
