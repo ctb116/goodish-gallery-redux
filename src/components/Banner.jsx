@@ -7,7 +7,7 @@ const Banner = () => {
   let rand = image[Math.floor(Math.random() * image.length)];
   return (
     <div className="banner-crop">
-      <img src={process.env.PUBLIC_URL + rand.src}></img>
+      <img src={process.env.PUBLIC_URL + rand.src} alt="featured drawing"></img>
     </div>
   );
 };

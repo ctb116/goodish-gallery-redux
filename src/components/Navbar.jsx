@@ -5,15 +5,13 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
 import { Link } from "react-router-dom";
-import "../styles/navbar.css"
+import "../styles/navbar.css";
 
 export default class Example extends React.Component {
   constructor(props) {
