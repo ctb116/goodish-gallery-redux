@@ -11,7 +11,10 @@ A website to feature art. Made with React.
 
 ## Features to add:
 
+- About Me section
+- For hire section
+- Comic homepage (better comic routing)
+
 ## Known Bugs:
 
 - grid display collapses on initial load.
-- banner randomizes image too often

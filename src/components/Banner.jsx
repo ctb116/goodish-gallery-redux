@@ -4,13 +4,20 @@ import "../styles/banner.css";
 
 class Banner extends Component {
   state = {
-    rand: getImages()[Math.floor(Math.random() * getImages().length)]
+    banner: {}
   };
+
+  componentDidMount() {
+    let bannerFilter = getImages().filter(image => image.banner === true);
+    let banner = bannerFilter[Math.floor(Math.random() * bannerFilter.length)];
+    this.setState({ banner });
+  }
+
   render() {
     return (
       <div className="banner-crop">
         <img
-          src={process.env.PUBLIC_URL + this.state.rand.src}
+          src={process.env.PUBLIC_URL + this.state.banner.src}
           alt="featured drawing"
         ></img>
       </div>

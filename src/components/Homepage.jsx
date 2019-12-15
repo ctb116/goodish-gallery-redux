@@ -61,7 +61,6 @@ class Homepage extends Component {
 
   render() {
     let images = this.filterImages();
-    console.log(this.state.filter);
     return (
       <React.Fragment>
         <Banner />

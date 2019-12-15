@@ -6,7 +6,8 @@ const images = [
     description: "string",
     commission: false,
     fanart: true,
-    mature: false
+    mature: false,
+    banner: true
   },
   {
     id: 4,
@@ -15,7 +16,8 @@ const images = [
     description: "string",
     commission: false,
     fanart: true,
-    mature: false
+    mature: false,
+    banner: true
   },
   {
     id: 3,
@@ -24,7 +26,8 @@ const images = [
     description: "string",
     commission: false,
     fanart: false,
-    mature: false
+    mature: false,
+    banner: false
   },
   {
     id: 2,
@@ -33,7 +36,8 @@ const images = [
     description: "string",
     commission: true,
     fanart: false,
-    mature: false
+    mature: false,
+    banner: false
   },
   {
     id: 1,
@@ -42,7 +46,8 @@ const images = [
     description: "string",
     commission: false,
     fanart: false,
-    mature: false
+    mature: false,
+    banner: true
   },
   {
     id: 0,
