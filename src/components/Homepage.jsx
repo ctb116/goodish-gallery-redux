@@ -5,8 +5,8 @@ import ReactModal from "./prebuilt/ReactModal";
 import CheckboxList from "./CheckboxList";
 import Image from "./Image";
 import Banner from "./Banner";
-
 import "../styles/homepage.css";
+import NavbarTop from "./NavbarTop";
 
 class Homepage extends Component {
   state = {
@@ -63,6 +63,7 @@ class Homepage extends Component {
     let images = this.filterImages();
     return (
       <React.Fragment>
+        <NavbarTop />
         <Banner />
         <div className="homepage">
           <p>Giant Wall of Art</p>

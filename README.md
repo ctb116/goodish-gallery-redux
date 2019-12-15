@@ -11,9 +11,11 @@ A website to feature art. Made with React.
 
 ## Features to add:
 
-- About Me section
-- For hire section
-- Comic homepage (better comic routing)
+- navbar spanning entire width above banner
+  - About Me section
+  - For hire section
+- navbar below banner
+  - Comic homepage (better comic routing)
 
 ## Known Bugs:
 

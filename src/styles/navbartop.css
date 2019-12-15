@@ -1,0 +1,9 @@
+div {
+  width: 100%;
+}
+
+span {
+  width: 25%;
+  padding-left: 20px;
+  padding-right: 20px;
+}

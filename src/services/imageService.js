@@ -1,5 +1,15 @@
 const images = [
   {
+    id: 6,
+    src: "/assets/pandoraHearts.png",
+    name: "Pandora Hearts",
+    description: "string",
+    commission: true,
+    fanart: true,
+    mature: false,
+    banner: true
+  },
+  {
     id: 5,
     src: "/assets/SpecterDaughter.jpg",
     name: "Specter and Daughter",
