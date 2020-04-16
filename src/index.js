@@ -1,6 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import { rootReducer } from "./reducers/index";
 import { ReactReduxFirebaseProvider } from "react-redux-firebase";
 import { createFirestoreInstance } from "redux-firestore";
 import firebase from "./firebase";
@@ -9,18 +12,26 @@ import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/index.css";
 
+//Redux store holds application state as single source of truth.
+//Access with getState()
+//update state with help from reducers and dispatch()
+
 const store = createStore(rootReducer);
 
+//imported firebase config
 const rrfProps = {
   firebase,
   config: {
-    userProfile: "users"
+    //any data on users will be stored ina collection called users
+    userProfile: "users",
   },
   dispatch: store.dispatch,
-  createFirestoreInstance
+  createFirestoreInstance,
 };
 
 ReactDOM.render(
+  //entry point for store to be able through application
+  //Provider offer all children access to connect()
   <Provider store={store}>
     <ReactReduxFirebaseProvider {...rrfProps}>
       <BrowserRouter>
