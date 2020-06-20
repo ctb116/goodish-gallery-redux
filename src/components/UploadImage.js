@@ -3,7 +3,15 @@ import { firebase, storage } from "../firebase";
 
 const UploadImage = () => {
   //hooks - useState
-  const allInputs = { imgUrl: "" };
+  const allInputs = {
+    imgUrl: "",
+    name: "name",
+    description: "string",
+    commission: false,
+    fanart: false,
+    mature: false,
+    banner: false,
+  };
   const [imageAsFile, setImageAsFile] = useState("");
   //new State variable called ImageAsUrl
   //this local state will be preserved between re-renders
@@ -16,11 +24,12 @@ const UploadImage = () => {
 
   const handleImageAsFile = (e) => {
     const image = e.target.files[0];
+    console.log("event " + image);
     //setImageAsFile - stage image for post
     setImageAsFile(() => image);
   };
 
-  const handleFireBaseUpload = (e) => {
+  const handleFirebaseUpload = (e) => {
     e.preventDefault();
     console.log("start of upload");
     // async magic goes here...
@@ -45,12 +54,13 @@ const UploadImage = () => {
         console.log(err);
       },
       () => {
-        // gets the functions from storage refences the image storage in firebase by the children
-        // gets the download url then sets the image from firebase as the value for the imgUrl key:
+        //storage - from firebase - gets functions
         storage
+          //.ref() - references the Storage directory by .child()
           .ref("images")
           .child(imageAsFile.name)
           .getDownloadURL()
+          // gets the download url then sets the image from firebase as the value for the imgUrl key:
           .then((fireBaseUrl) => {
             setImageAsUrl((prevObject) => ({
               ...prevObject,
@@ -63,7 +73,7 @@ const UploadImage = () => {
 
   return (
     <div>
-      <form onSubmit={handleFireBaseUpload}>
+      <form onSubmit={handleFirebaseUpload}>
         <input type="file" onChange={handleImageAsFile} />
         <button>upload to firebase</button>
       </form>
