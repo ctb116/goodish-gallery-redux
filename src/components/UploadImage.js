@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { storage } from "../firebase";
 
-const UploadImage = () => {
+const UploadImage = (props) => {
   //hooks - useState
   const allInputs = {
     imgUrl: "",
@@ -22,21 +22,13 @@ const UploadImage = () => {
   console.log(imageAsFile);
 
   //holds the entire finished object for database
-  console.log(imageAsUrl);
+  // console.log(imageAsUrl);
 
   const handleImageAsFile = (e) => {
     const image = e.target.files[0];
     console.log("event " + image);
     //setImageAsFile - stage image for post
     setImageAsFile(() => image);
-  };
-
-  const handleImageName = (name) => {
-    allInputs.name = name;
-  };
-
-  const handleImageDescription = (desc) => {
-    allInputs.description = desc;
   };
 
   const handleFirebaseUpload = (e) => {
@@ -72,10 +64,11 @@ const UploadImage = () => {
           .getDownloadURL()
           // gets the download url then sets the image from firebase as the value for the imgUrl key:
           .then((fireBaseUrl) => {
-            setImageAsUrl((prevObject) => ({
-              ...prevObject,
-              imgUrl: fireBaseUrl,
-            }));
+            props.onDownloadURL(fireBaseUrl);
+            // setImageAsUrl((prevObject) => ({
+            //   ...prevObject,
+            //   imgUrl: fireBaseUrl,
+            // }));
           });
       }
     );
@@ -85,7 +78,10 @@ const UploadImage = () => {
     <div>
       <form onSubmit={handleFirebaseUpload}>
         <input type="file" onChange={handleImageAsFile} />
-        <input type="text" onChange={(e) => handleImageName(e.target.value)} />
+        <input
+          type="text"
+          onChange={(e) => props.onImageNameChange(e.target.value)}
+        />
         {/* <input
           name="fanart"
           type="checkbox"
@@ -94,7 +90,7 @@ const UploadImage = () => {
         /> */}
         <input
           type="text"
-          onChange={(e) => handleImageDescription(e.target.value)}
+          onChange={(e) => props.onImageDescriptionChange(e.target.value)}
         />
         <button>upload to firebase</button>
       </form>
