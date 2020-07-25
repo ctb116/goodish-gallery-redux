@@ -20,6 +20,8 @@ const UploadImage = () => {
   const [imageAsUrl, setImageAsUrl] = useState(allInputs);
 
   console.log(imageAsFile);
+
+  //holds the entire finished object for database
   console.log(imageAsUrl);
 
   const handleImageAsFile = (e) => {
@@ -27,6 +29,14 @@ const UploadImage = () => {
     console.log("event " + image);
     //setImageAsFile - stage image for post
     setImageAsFile(() => image);
+  };
+
+  const handleImageName = (name) => {
+    allInputs.name = name;
+  };
+
+  const handleImageDescription = (desc) => {
+    allInputs.description = desc;
   };
 
   const handleFirebaseUpload = (e) => {
@@ -75,6 +85,17 @@ const UploadImage = () => {
     <div>
       <form onSubmit={handleFirebaseUpload}>
         <input type="file" onChange={handleImageAsFile} />
+        <input type="text" onChange={(e) => handleImageName(e.target.value)} />
+        {/* <input
+          name="fanart"
+          type="checkbox"
+          checked={allInputs.fanart}
+          onChange={this.handleCheckboxChange}
+        /> */}
+        <input
+          type="text"
+          onChange={(e) => handleImageDescription(e.target.value)}
+        />
         <button>upload to firebase</button>
       </form>
       <img src={imageAsUrl.imgUrl} alt="image tag" />

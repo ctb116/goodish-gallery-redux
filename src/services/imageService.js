@@ -7,7 +7,7 @@ const images = [
     commission: true,
     fanart: true,
     mature: false,
-    banner: true
+    banner: true,
   },
   {
     id: 5,
@@ -17,7 +17,7 @@ const images = [
     commission: false,
     fanart: true,
     mature: false,
-    banner: true
+    banner: true,
   },
   {
     id: 4,
@@ -27,7 +27,7 @@ const images = [
     commission: false,
     fanart: true,
     mature: false,
-    banner: true
+    banner: true,
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const images = [
     commission: false,
     fanart: false,
     mature: false,
-    banner: false
+    banner: false,
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ const images = [
     commission: true,
     fanart: false,
     mature: false,
-    banner: false
+    banner: false,
   },
   {
     id: 1,
@@ -57,7 +57,7 @@ const images = [
     commission: false,
     fanart: false,
     mature: false,
-    banner: true
+    banner: true,
   },
   {
     id: 0,
@@ -66,8 +66,8 @@ const images = [
     description: "string",
     commission: true,
     fanart: false,
-    mature: false
-  }
+    mature: false,
+  },
 ];
 
 export function getImages() {
