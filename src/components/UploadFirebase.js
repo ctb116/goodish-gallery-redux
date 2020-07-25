@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import UploadImage from "./UploadImage";
-import CheckboxList from "./CheckboxList";
-
-//get this shit to firebase now!!!!!
+import ImageInfoForm from "./ImageInfoForm";
 
 class UploadFirebase extends Component {
   state = {
@@ -38,16 +36,13 @@ class UploadFirebase extends Component {
     console.log(this.state);
     return (
       <div>
-        <CheckboxList
-          checkboxObj={this.state.tags}
-          onCheckboxChange={this.handleCheckboxChange}
-        />
-        <UploadImage
-          state={this.state}
-          onDownloadURL={this.handleImageUrl}
+        <ImageInfoForm
           onImageNameChange={this.handleImageName}
           onImageDescriptionChange={this.handleImageDescription}
+          onCheckboxChange={this.handleCheckboxChange}
+          imageInfo={this.state}
         />
+        <UploadImage state={this.state} onDownloadURL={this.handleImageUrl} />
       </div>
     );
   }

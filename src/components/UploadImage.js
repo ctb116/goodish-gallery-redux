@@ -5,21 +5,11 @@ import { useFirestoreConnect } from "react-redux-firebase";
 
 const UploadImage = (props) => {
   //hooks - useState
-  const allInputs = {
-    imgUrl: "",
-    name: "name",
-    description: "string",
-    commission: false,
-    fanart: false,
-    mature: false,
-    banner: false,
-  };
   const [imageAsFile, setImageAsFile] = useState("");
   //new State variable called ImageAsUrl
   //this local state will be preserved between re-renders
   //useState returns pair - the current state and a method to update it
   //must provide useState with an initial state - does not have to be an object
-  const [imageAsUrl, setImageAsUrl] = useState(allInputs);
 
   console.log(imageAsFile);
 
@@ -80,35 +70,18 @@ const UploadImage = (props) => {
 
   const addImageObjToFirebase = (event) => {
     event.preventDefault();
-    return firestore.collection("allImages").add(props.state);
+    return firestore.collection("allImages").add(test: {props.state});
   };
 
-  console.log(test);
   return (
     <div>
       <form onSubmit={handleFirebaseUpload}>
         <input type="file" onChange={handleImageAsFile} />
-        <input
-          type="text"
-          onChange={(e) => props.onImageNameChange(e.target.value)}
-        />
-        {/* <input
-          name="fanart"
-          type="checkbox"
-          checked={allInputs.fanart}
-          onChange={this.handleCheckboxChange}
-        /> */}
-        <input
-          type="text"
-          onChange={(e) => props.onImageDescriptionChange(e.target.value)}
-        />
         <button>upload to firebase</button>
       </form>
       <form onSubmit={addImageObjToFirebase}>
         <button>upload to the real deal!</button>
       </form>
-
-      <img src={imageAsUrl.imgUrl} alt="image tag" />
     </div>
   );
 };
