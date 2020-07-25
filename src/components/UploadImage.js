@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { storage } from "../firebase";
+import { useFirestore } from "react-redux-firebase";
+import { useFirestoreConnect } from "react-redux-firebase";
 
 const UploadImage = (props) => {
   //hooks - useState
@@ -23,6 +25,8 @@ const UploadImage = (props) => {
 
   //holds the entire finished object for database
   // console.log(imageAsUrl);
+
+  const firestore = useFirestore();
 
   const handleImageAsFile = (e) => {
     const image = e.target.files[0];
@@ -74,6 +78,12 @@ const UploadImage = (props) => {
     );
   };
 
+  const addImageObjToFirebase = (event) => {
+    event.preventDefault();
+    return firestore.collection("allImages").add(props.state);
+  };
+
+  console.log(test);
   return (
     <div>
       <form onSubmit={handleFirebaseUpload}>
@@ -94,6 +104,10 @@ const UploadImage = (props) => {
         />
         <button>upload to firebase</button>
       </form>
+      <form onSubmit={addImageObjToFirebase}>
+        <button>upload to the real deal!</button>
+      </form>
+
       <img src={imageAsUrl.imgUrl} alt="image tag" />
     </div>
   );

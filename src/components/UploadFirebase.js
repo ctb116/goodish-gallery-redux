@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import UploadImage from "./UploadImage";
 import CheckboxList from "./CheckboxList";
 
-//create prop for image url so this whole state is ready for firebase
-//same for name and description
+//get this shit to firebase now!!!!!
 
 class UploadFirebase extends Component {
   state = {
@@ -44,6 +43,7 @@ class UploadFirebase extends Component {
           onCheckboxChange={this.handleCheckboxChange}
         />
         <UploadImage
+          state={this.state}
           onDownloadURL={this.handleImageUrl}
           onImageNameChange={this.handleImageName}
           onImageDescriptionChange={this.handleImageDescription}
