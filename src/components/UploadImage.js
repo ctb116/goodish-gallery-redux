@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { firebase, storage } from "../firebase";
+import { storage } from "../firebase";
 
 const UploadImage = () => {
   //hooks - useState
