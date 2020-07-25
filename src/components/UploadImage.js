@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { storage } from "../firebase";
 import { useFirestore } from "react-redux-firebase";
-import { useFirestoreConnect } from "react-redux-firebase";
 
 const UploadImage = (props) => {
   //hooks - useState
@@ -70,7 +69,7 @@ const UploadImage = (props) => {
 
   const addImageObjToFirebase = (event) => {
     event.preventDefault();
-    return firestore.collection("allImages").add(test: {props.state});
+    return firestore.collection("allImages").add(props.state);
   };
 
   return (

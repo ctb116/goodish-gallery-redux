@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import UploadImage from "./UploadImage";
 import ImageInfoForm from "./ImageInfoForm";
+import ImageList from "./ImageList";
 
 class UploadFirebase extends Component {
   state = {
@@ -43,6 +44,7 @@ class UploadFirebase extends Component {
           imageInfo={this.state}
         />
         <UploadImage state={this.state} onDownloadURL={this.handleImageUrl} />
+        <ImageList />
       </div>
     );
   }
