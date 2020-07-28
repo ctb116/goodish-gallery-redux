@@ -1,15 +1,16 @@
 import React from "react";
+import "../styles/image.css";
 
-const Image = props => {
+const Image = (props) => {
   return (
-    <React.Fragment>
+    <div>
       <img
+        className="grid-image"
         src={process.env.PUBLIC_URL + props.image.src}
         alt={props.image.name}
-        style={{ width: "100%", borderRadius: 5 }}
         onClick={() => props.onView(props.image)}
       />
-    </React.Fragment>
+    </div>
   );
 };
 
