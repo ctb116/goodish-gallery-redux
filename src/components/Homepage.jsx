@@ -74,17 +74,17 @@ class Homepage extends Component {
               onCheckboxChange={this.handleCheckboxChange}
             />
           </div>
-          <div className="container">
-            {images.map((image) => (
-              <Image image={image} onView={this.handleView} key={image.id} />
-            ))}
-          </div>
-          <ReactModal
-            image={this.state.viewImage}
-            modal={this.state.modal}
-            onToggle={this.toggle}
-          />
         </div>
+        <div className="grid">
+          {images.map((image) => (
+            <Image image={image} onView={this.handleView} key={image.id} />
+          ))}
+        </div>
+        <ReactModal
+          image={this.state.viewImage}
+          modal={this.state.modal}
+          onToggle={this.toggle}
+        />
       </React.Fragment>
     );
   }

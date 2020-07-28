@@ -1,8 +1,10 @@
 /* Opacity #2 */
 
-.container {
+.grid {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  padding-right: 15px;
+  padding-left: 15px;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
   grid-gap: 3px;
 }
 
