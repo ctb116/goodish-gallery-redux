@@ -7,6 +7,7 @@ import Image from "./Image";
 import Banner from "./Banner";
 import "../styles/homepage.css";
 import NavbarTop from "./NavbarTop";
+import ArtWall from "./ArtWall";
 
 class Homepage extends Component {
   state = {
@@ -18,19 +19,19 @@ class Homepage extends Component {
       description: "",
       commission: false,
       fanart: false,
-      mature: false
+      mature: false,
     },
     filter: { commission: false, fanart: false, mature: true },
-    modal: false
+    modal: false,
   };
 
   toggle = () => {
-    this.setState(prevState => ({
-      modal: !prevState.modal
+    this.setState((prevState) => ({
+      modal: !prevState.modal,
     }));
   };
 
-  handleView = image => {
+  handleView = (image) => {
     this.toggle();
     this.setState({ viewImage: image });
   };
@@ -41,7 +42,7 @@ class Homepage extends Component {
 
     for (var key in filter) {
       if (filter[key] === true) {
-        let filterImages = images.filter(image => image[key] !== false);
+        let filterImages = images.filter((image) => image[key] !== false);
         return filterImages;
       } else {
         return images;
@@ -49,7 +50,7 @@ class Homepage extends Component {
     }
   };
 
-  handleCheckboxChange = name => {
+  handleCheckboxChange = (name) => {
     let filter = this.state.filter;
     for (var key in filter) {
       if (key === name) {
@@ -73,11 +74,11 @@ class Homepage extends Component {
               onCheckboxChange={this.handleCheckboxChange}
             />
           </div>
-          <StackGrid className="hover" columnWidth={"30%"}>
-            {images.map(image => (
+          <div className="container">
+            {images.map((image) => (
               <Image image={image} onView={this.handleView} key={image.id} />
             ))}
-          </StackGrid>
+          </div>
           <ReactModal
             image={this.state.viewImage}
             modal={this.state.modal}
