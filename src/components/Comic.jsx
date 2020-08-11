@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getComicOne } from "../services/comicOneService";
+import { getComicOne } from "../firebase/comicOneService";
 import ComicPage from "./ComicPage";
 
 class Comic extends Component {
@@ -12,13 +12,13 @@ class Comic extends Component {
       description: "",
       commission: false,
       fanart: false,
-      mature: false
-    }
+      mature: false,
+    },
   };
 
   componentDidMount = () => {
     let paramsId = parseInt(this.props.match.params.id);
-    let viewPage = this.state.pages.find(page => page.id === paramsId);
+    let viewPage = this.state.pages.find((page) => page.id === paramsId);
     this.setState({ viewPage });
   };
 

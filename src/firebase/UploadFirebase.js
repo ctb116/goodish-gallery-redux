@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import UploadImage from "./UploadImage";
-import ImageInfoForm from "./ImageInfoForm";
-import ImageList from "./ImageList";
+import ImageInfoForm from "../components/ImageInfoForm";
+import ImageList from "../components/ImageList";
 
 class UploadFirebase extends Component {
   state = {

@@ -6,7 +6,7 @@ const comicOne = [
     description: "string",
     commission: true,
     fanart: false,
-    mature: false
+    mature: false,
   },
   {
     id: 7,
@@ -15,7 +15,7 @@ const comicOne = [
     description: "string",
     commission: true,
     fanart: false,
-    mature: false
+    mature: false,
   },
   {
     id: 6,
@@ -24,7 +24,7 @@ const comicOne = [
     description: "string",
     commission: true,
     fanart: false,
-    mature: false
+    mature: false,
   },
   {
     id: 5,
@@ -33,7 +33,7 @@ const comicOne = [
     description: "string",
     commission: true,
     fanart: false,
-    mature: false
+    mature: false,
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const comicOne = [
     description: "string",
     commission: true,
     fanart: false,
-    mature: false
+    mature: false,
   },
   {
     id: 3,
@@ -51,7 +51,7 @@ const comicOne = [
     description: "string",
     commission: true,
     fanart: false,
-    mature: false
+    mature: false,
   },
   {
     id: 2,
@@ -60,7 +60,7 @@ const comicOne = [
     description: "string",
     commission: true,
     fanart: false,
-    mature: false
+    mature: false,
   },
   {
     id: 1,
@@ -69,7 +69,7 @@ const comicOne = [
     description: "string",
     commission: true,
     fanart: false,
-    mature: false
+    mature: false,
   },
   {
     id: 0,
@@ -78,8 +78,8 @@ const comicOne = [
     description: "string",
     commission: true,
     fanart: false,
-    mature: false
-  }
+    mature: false,
+  },
 ];
 
 export function getComicOne() {

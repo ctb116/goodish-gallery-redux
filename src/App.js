@@ -5,8 +5,7 @@ import Comic from "./components/Comic";
 import Homepage from "./components/Homepage";
 import Hire from "./components/Hire";
 import Navbar from "./components/Navbar";
-// import UploadImage from "./components/UploadImage";
-import UploadFirebase from "./components/UploadFirebase";
+import UploadFirebase from "./firebase/UploadFirebase";
 
 class App extends Component {
   render() {

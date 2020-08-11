@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import { getImages } from "../services/imageService";
+import { getImages } from "../firebase/imageService";
 import "../styles/banner.css";
 
 class Banner extends Component {
   state = {
-    banner: {}
+    banner: {},
   };
 
   componentDidMount() {
-    let bannerFilter = getImages().filter(image => image.banner === true);
+    let bannerFilter = getImages().filter((image) => image.banner === true);
     let banner = bannerFilter[Math.floor(Math.random() * bannerFilter.length)];
     this.setState({ banner });
   }

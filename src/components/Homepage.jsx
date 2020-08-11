@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import StackGrid from "react-stack-grid";
-import { getImages } from "../services/imageService";
+import { getImages } from "../firebase/imageService";
 import ReactModal from "./prebuilt/ReactModal";
 import CheckboxList from "./CheckboxList";
 import ImageList from "./ImageList";
 import Banner from "./Banner";
 import "../styles/homepage.css";
 import NavbarTop from "./NavbarTop";
-import ArtWall from "./ArtWall";
 
 class Homepage extends Component {
   state = {
@@ -61,7 +59,6 @@ class Homepage extends Component {
   };
 
   render() {
-    let images = this.filterImages();
     return (
       <React.Fragment>
         <NavbarTop />
