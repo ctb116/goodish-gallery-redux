@@ -3,7 +3,7 @@ import StackGrid from "react-stack-grid";
 import { getImages } from "../services/imageService";
 import ReactModal from "./prebuilt/ReactModal";
 import CheckboxList from "./CheckboxList";
-import Image from "./Image";
+import ImageList from "./ImageList";
 import Banner from "./Banner";
 import "../styles/homepage.css";
 import NavbarTop from "./NavbarTop";
@@ -75,11 +75,7 @@ class Homepage extends Component {
             />
           </div>
         </div>
-        <div className="grid">
-          {images.map((image) => (
-            <Image image={image} onView={this.handleView} key={image.id} />
-          ))}
-        </div>
+        <ImageList handleView={this.handleView} />
         <ReactModal
           image={this.state.viewImage}
           modal={this.state.modal}

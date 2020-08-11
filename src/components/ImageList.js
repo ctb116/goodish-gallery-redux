@@ -1,20 +1,17 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useFirestoreConnect, isLoaded } from "react-redux-firebase";
+import { useFirestoreConnect, isLoaded, isEmpty } from "react-redux-firebase";
+import ArtWall from "./ArtWall";
 
-function ImageList() {
-  // The useFirestoreConnect() hook comes from react-redux-firebase.
+function ImageList(props) {
   useFirestoreConnect([{ collection: "allImages" }]);
 
-  // The useSelector() hook comes from react-redux.
   const images = useSelector((state) => state.firestore.ordered.allImages);
 
-  // react-redux-firebase also offers a useful isLoaded() function.
   if (isLoaded(images)) {
-    console.log(images);
     return (
       <React.Fragment>
-        <hr />
+        <ArtWall images={images} handleView={props.handleView} />
       </React.Fragment>
     );
   } else {

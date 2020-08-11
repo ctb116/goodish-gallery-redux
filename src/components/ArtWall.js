@@ -1,14 +1,12 @@
 import React from "react";
+import Image from "./Image";
 
 const ArtWall = (props) => {
   return (
-    <div>
-      <img
-        src={process.env.PUBLIC_URL + props.image.src}
-        alt={props.image.name}
-        style={{ width: "100%", borderRadius: 5 }}
-        onClick={() => props.onView(props.image)}
-      />
+    <div className="grid">
+      {props.images.map((image) => (
+        <Image image={image} onView={props.handleView} key={image.id} />
+      ))}
     </div>
   );
 };
