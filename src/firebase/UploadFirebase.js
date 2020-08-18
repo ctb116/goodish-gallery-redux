@@ -44,7 +44,6 @@ class UploadFirebase extends Component {
           imageInfo={this.state}
         />
         <UploadImage state={this.state} onDownloadURL={this.handleImageUrl} />
-        <ImageList />
       </div>
     );
   }
