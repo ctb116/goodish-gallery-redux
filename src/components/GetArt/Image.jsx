@@ -1,8 +1,7 @@
 import React from "react";
-import "../styles/image.css";
+import "../../styles/image.css";
 
 const Image = (props) => {
-  console.log(props);
   return (
     <div>
       <img

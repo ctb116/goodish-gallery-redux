@@ -1,11 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useFirestoreConnect, isLoaded } from "react-redux-firebase";
+import CheckboxList from "./../CheckboxList";
 import Banner from "./Banner";
 import ArtWall from "./ArtWall";
 
 function GetArt(props) {
-  useFirestoreConnect([{ collection: "allImages" }]);
+  useFirestoreConnect({
+    collection: "allImages",
+    where: ["tags.mature", "==", false],
+  });
   const images = useSelector((state) => state.firestore.ordered.allImages);
 
   if (isLoaded(images)) {
@@ -16,6 +20,12 @@ function GetArt(props) {
     return (
       <React.Fragment>
         <Banner image={bannerRandom} />
+        <div className="homepage-checkboxes">
+          <CheckboxList
+            checkboxObj={props.tagsFilter}
+            onCheckboxChange={props.onCheckboxChange}
+          />
+        </div>
         <ArtWall images={images} handleView={props.handleView} />
       </React.Fragment>
     );

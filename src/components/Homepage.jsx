@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactModal from "./prebuilt/ReactModal";
-import CheckboxList from "./CheckboxList";
-import ImageList from "./GetArt";
+import GetArt from "./GetArt/GetArt";
 import "../styles/homepage.css";
 import NavbarTop from "./NavbarTop";
 
@@ -16,7 +15,7 @@ class Homepage extends Component {
       fanart: false,
       mature: false,
     },
-    filter: { commission: false, fanart: false, mature: true },
+    tagsFilter: { commission: false, fanart: false, mature: true },
     modal: false,
   };
 
@@ -31,23 +30,9 @@ class Homepage extends Component {
     this.setState({ viewImage: image });
   };
 
-  filterImages = () => {
-    let images = this.state.images;
-    let filter = this.state.filter;
-
-    for (var key in filter) {
-      if (filter[key] === true) {
-        let filterImages = images.filter((image) => image[key] !== false);
-        return filterImages;
-      } else {
-        return images;
-      }
-    }
-  };
-
   handleCheckboxChange = (name) => {
-    let filter = this.state.filter;
-    for (var key in filter) {
+    let filter = this.state.tagsFilter;
+    for (let key in filter) {
       if (key === name) {
         filter[key] = !filter[key];
       }
@@ -61,14 +46,12 @@ class Homepage extends Component {
         <NavbarTop />
         <div className="homepage">
           <p>Giant Wall of Art</p>
-          <div className="homepage-checkboxes">
-            <CheckboxList
-              checkboxObj={this.state.filter}
-              onCheckboxChange={this.handleCheckboxChange}
-            />
-          </div>
         </div>
-        <ImageList handleView={this.handleView} />
+        <GetArt
+          tagsFilter={this.state.tagsFilter}
+          onCheckboxChange={this.handleCheckboxChange}
+          handleView={this.handleView}
+        />
         <ReactModal
           image={this.state.viewImage}
           modal={this.state.modal}
