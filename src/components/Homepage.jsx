@@ -1,15 +1,12 @@
 import React, { Component } from "react";
-import { getImages } from "../firebase/imageService";
 import ReactModal from "./prebuilt/ReactModal";
 import CheckboxList from "./CheckboxList";
-import ImageList from "./ImageList";
-import Banner from "./Banner";
+import ImageList from "./GetArt";
 import "../styles/homepage.css";
 import NavbarTop from "./NavbarTop";
 
 class Homepage extends Component {
   state = {
-    images: getImages(),
     viewImage: {
       id: 0,
       src: "",
@@ -62,7 +59,6 @@ class Homepage extends Component {
     return (
       <React.Fragment>
         <NavbarTop />
-        <Banner />
         <div className="homepage">
           <p>Giant Wall of Art</p>
           <div className="homepage-checkboxes">

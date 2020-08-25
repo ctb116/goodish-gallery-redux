@@ -1,16 +1,21 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useFirestoreConnect, isLoaded } from "react-redux-firebase";
+import Banner from "./Banner";
 import ArtWall from "./ArtWall";
 
-function ImageList(props) {
+function GetArt(props) {
   useFirestoreConnect([{ collection: "allImages" }]);
-
   const images = useSelector((state) => state.firestore.ordered.allImages);
 
   if (isLoaded(images)) {
+    const bannerFilter = images.filter((image) => image.tags.banner === true);
+    let bannerRandom =
+      bannerFilter[Math.floor(Math.random() * bannerFilter.length)];
+
     return (
       <React.Fragment>
+        <Banner image={bannerRandom} />
         <ArtWall images={images} handleView={props.handleView} />
       </React.Fragment>
     );
@@ -23,4 +28,4 @@ function ImageList(props) {
   }
 }
 
-export default ImageList;
+export default GetArt;
