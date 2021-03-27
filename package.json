@@ -1,5 +1,6 @@
 {
   "name": "morevenb",
+  "homepage": "https://morriebird.paperspencils.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -45,6 +46,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ctb116/art-portfolio/issues"
-  },
-  "homepage": "https://github.com/ctb116/art-portfolio#readme"
+  }
 }
