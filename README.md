@@ -1,7 +1,7 @@
-# Art-Portfolio
+# Goodish Gallery
 
-By _**Catherine Bradley**_</br>
-Contact: _**catherinetybradley@gmail.com**_</br>
+By _**Cathy T Bradley**_</br>
+Contact: _**cathytbradley116@gmail.com**_</br>
 
 ## Description
 
@@ -16,6 +16,15 @@ banner: If the artwork is a good fit for the large banner on the homage. (larger
 
 A visitor to the website can filter images based on commission, fanart, and mature
 
+## Technologies
+
+- React
+- Redux
+- Firebase
+
+## Setup and Installation
+Please see [Setup and Installation](https://github.com/ctb116/goodish-gallery/wiki/Setup-and-Installation) in the repo's wiki.
+
 ## Features to add:
 
 - navbar spanning entire width above banner
@@ -24,12 +33,6 @@ A visitor to the website can filter images based on commission, fanart, and matu
 - navbar below banner
 
   - Comic homepage (better comic routing)
-
-## Technologies
-
-- React
-- Redux
-- Firebase
 
 ## Known Bugs:
 
