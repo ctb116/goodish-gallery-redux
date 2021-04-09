@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import UploadFirebase from "./firebase/UploadFirebase";
 
 class App extends Component {
+
   render() {
     return (
       <React.Fragment>
@@ -16,7 +17,10 @@ class App extends Component {
           <Route path="/aboutme" component={About} />
           <Route path="/hireme" component={Hire} />
           <Route path="/cornstaff/:id" component={Comic} />
-          <Route path="/admin" component={UploadFirebase} />
+          <Route 
+            path='/admin'
+            component={UploadFirebase}
+          />
           <Route path="/" component={Homepage} />
         </Switch>
       </React.Fragment>
