@@ -1,9 +1,7 @@
 import React from "react";
 
-const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
-  <div className="form-check">
-    <div className="col-3">
-      <label id="items">
+const Checkbox = ({ id, label, isSelected, onCheckboxChange }) => (
+      <label id={id}>
         <input
           type="checkbox"
           name={label}
@@ -13,8 +11,6 @@ const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
         />
         {label}
       </label>
-    </div>
-  </div>
 );
 
 export default Checkbox;

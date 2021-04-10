@@ -6,10 +6,12 @@ class CheckboxList extends Component {
   render() {
     //object passed as prob converted to array
     let checkboxArray = Object.entries(this.props.checkboxObj);
+    let count = 0;
     return (
-      <div className="row" id="CheckboxList">
+      <div id="tagsfilterGrid">
         {checkboxArray.map((checkbox) => (
           <Checkbox
+            id = {`tagsFilterItem-${count += 1}`}
             label={checkbox[0]}
             isSelected={checkbox[1]}
             onCheckboxChange={this.props.onCheckboxChange}

@@ -1,0 +1,31 @@
+#tagsfilterGrid {
+  display: inline-grid;
+  grid-template-columns: 30% 10% 10% 10% 30%;
+  grid-template-rows: 10%;
+}
+
+#tagsFilterItem-1 {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+#tagsFilterItem-2 {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+#tagsFilterItem-3 {
+  grid-column-start: 4;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+
+div {
+  color: red;
+}
