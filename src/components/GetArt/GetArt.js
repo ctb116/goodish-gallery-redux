@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useFirestoreConnect, isLoaded } from "react-redux-firebase";
-import CheckboxList from "./../CheckboxList";
+import CheckboxList from "../TagsFilterList";
 import Banner from "./Banner";
 import ArtWall from "./ArtWall";
 

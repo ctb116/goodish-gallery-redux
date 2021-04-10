@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Checkbox from "./Checkbox";
+import Checkbox from "./TagsFilterButton";
+import './../styles/tagsFilter.css';
 
 class CheckboxList extends Component {
   render() {
