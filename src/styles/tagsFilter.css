@@ -1,7 +1,8 @@
 #tagsfilterGrid {
   display: inline-grid;
-  grid-template-columns: 30% 10% 10% 10% 30%;
-  grid-template-rows: 10%;
+  grid-template-columns: 27.5% 15% 15% 15% 27.5%;
+  grid-template-rows: 50px;
+  column-gap: 15px;
 }
 
 #tagsFilterItem-1 {
@@ -25,7 +26,13 @@
   grid-row-end: 1;
 }
 
+.tagsfilterbutton {
+  outline: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-div {
-  color: red;
+input {
+  display: none;
 }

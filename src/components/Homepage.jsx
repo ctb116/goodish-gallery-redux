@@ -15,7 +15,7 @@ class Homepage extends Component {
       fanart: false,
       mature: false,
     },
-    tagsFilter: { commission: false, fanart: false, mature: true },
+    tagsFilter: { mature: true, commission: false, fanart: false },
     modal: false,
   };
 
@@ -31,16 +31,18 @@ class Homepage extends Component {
   };
 
   handleCheckboxChange = (name) => {
+    console.log(name);
     let filter = this.state.tagsFilter;
     for (let key in filter) {
       if (key === name) {
         filter[key] = !filter[key];
       }
     }
-    this.setState({ filter });
+    this.setState({ tasFilter: filter });
   };
 
   render() {
+    console.log(this.state.tagsFilter)
     return (
       <React.Fragment>
         <NavbarTop />
