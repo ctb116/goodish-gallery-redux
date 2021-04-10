@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import UploadImage from "./UploadImage";
 import ImageInfoForm from "../components/ImageInfoForm";
-import UI from './FirebaseUI';
 
 class UploadFirebase extends Component {
   state = {
@@ -49,7 +48,6 @@ class UploadFirebase extends Component {
     console.log(this.state);
     return (
       <div>
-        <UI/>
         <ImageInfoForm
           onImageNameChange={this.handleImageName}
           onImageDescriptionChange={this.handleImageDescription}

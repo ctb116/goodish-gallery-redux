@@ -19,6 +19,8 @@ const UI = props => {
     ],
     callbacks: {
       signInSuccess: function() {
+        props.onSignIn();
+        props.history.push('/admin');
         // Do not automatically redirect.
         return false;
       }  
