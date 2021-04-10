@@ -1,7 +1,7 @@
 import React from "react";
 
 const Checkbox = ({ id, label, isSelected, onCheckboxChange }) => (
-  <label className='tagsfilterbutton' id={id}>
+  <label className={isSelected ? 'tagsfilterbutton' : 'tagsfilterbuttonSelected'} id={id}>
     <input
       type="checkbox"
       name={label}

@@ -14,8 +14,7 @@ function GetArt(props) {
 
   if (isLoaded(images)) {
     const bannerFilter = images.filter((image) => image.tags.banner === true);
-    let bannerRandom =
-      bannerFilter[Math.floor(Math.random() * bannerFilter.length)];
+    let bannerRandom = bannerFilter[Math.floor(Math.random() * bannerFilter.length)];
 
     return (
       <React.Fragment>

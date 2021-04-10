@@ -5,6 +5,7 @@
   column-gap: 15px;
 }
 
+/* mature */
 #tagsFilterItem-1 {
   grid-column-start: 2;
   grid-column-end: 2;
@@ -12,6 +13,7 @@
   grid-row-end: 1;
 }
 
+/* commission */
 #tagsFilterItem-2 {
   grid-column-start: 3;
   grid-column-end: 3;
@@ -19,6 +21,7 @@
   grid-row-end: 1;
 }
 
+/* fanart */
 #tagsFilterItem-3 {
   grid-column-start: 4;
   grid-column-end: 4;
@@ -26,11 +29,22 @@
   grid-row-end: 1;
 }
 
+
 .tagsfilterbutton {
-  outline: 1px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.tagsfilterbuttonSelected {
+  outline: 1px solid #eaeacf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label:hover {
+  opacity: 0.5;
 }
 
 input {
