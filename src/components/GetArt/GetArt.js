@@ -1,14 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useFirestoreConnect, isLoaded } from "react-redux-firebase";
-import CheckboxList from "../TagsFilterList";
+import TagsFilterList from "../TagsFilterList";
 import Banner from "./Banner";
 import ArtWall from "./ArtWall";
 
-function GetArt(props) {
+const GetArt = (props) => {
   useFirestoreConnect({
     collection: "allImages",
-    where: ["tags.mature", "==", false],
   });
   const images = useSelector((state) => state.firestore.ordered.allImages);
 
@@ -16,13 +15,17 @@ function GetArt(props) {
     const bannerFilter = images.filter((image) => image.tags.banner === true);
     let bannerRandom = bannerFilter[Math.floor(Math.random() * bannerFilter.length)];
 
+    const fanartFilter = images.filter((image) => image.tags.fanart === true);
+    let fanartRandom = fanartFilter[Math.floor(Math.random() * fanartFilter.length)];
+
     return (
       <React.Fragment>
         <Banner image={bannerRandom} />
         <div className="homepage-checkboxes">
-          <CheckboxList
+          <TagsFilterList
             checkboxObj={props.tagsFilter}
             onCheckboxChange={props.onCheckboxChange}
+            buttonbackground={fanartRandom.imgUrl}
           />
         </div>
         <ArtWall images={images} handleView={props.handleView} />

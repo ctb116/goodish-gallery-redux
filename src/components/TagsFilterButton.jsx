@@ -1,7 +1,11 @@
 import React from "react";
 
-const Checkbox = ({ id, label, isSelected, onCheckboxChange }) => (
-  <label className={isSelected ? 'tagsfilterbutton' : 'tagsfilterbuttonSelected'} id={id}>
+const TagsFilterButton = ({ id, label, isSelected, onCheckboxChange, buttonbackground }) => (
+  <label 
+    className={isSelected ? 'tagsfilterbutton' : 'tagsfilterbuttonSelected'} 
+    id={id}
+    >
+    <img src={buttonbackground} alt="featured drawing"></img>
     <input
       type="checkbox"
       name={label}
@@ -13,4 +17,4 @@ const Checkbox = ({ id, label, isSelected, onCheckboxChange }) => (
   </label>
 );
 
-export default Checkbox;
+export default TagsFilterButton;

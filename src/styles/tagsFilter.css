@@ -29,19 +29,39 @@
   grid-row-end: 1;
 }
 
+label {
+  position: relative;
+  font-size: 20px;
+  text-shadow: 2px 2px black;
+}
+
+label img {
+  object-fit: cover;
+  object-position: 70% 35%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
 
 .tagsfilterbutton {
   display: flex;
   justify-content: center;
   align-items: center;
+  filter: grayscale(100%)
 }
 
 .tagsfilterbuttonSelected {
-  outline: 1px solid #eaeacf;
+  outline: 3px solid #eaeacf;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 
 label:hover {
   opacity: 0.5;
