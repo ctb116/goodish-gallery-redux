@@ -5,7 +5,7 @@ import TagsFilterList from "../TagsFilterList";
 import Banner from "./Banner";
 import ArtWall from "./ArtWall";
 
-const GetArt = (props) => {
+const GetArt = React.memo((props) => {
   useFirestoreConnect({
     collection: "allImages",
   });
@@ -38,6 +38,6 @@ const GetArt = (props) => {
       </React.Fragment>
     );
   }
-}
+})
 
 export default GetArt;

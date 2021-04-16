@@ -1,11 +1,17 @@
 import React from "react";
 
-const TagsFilterButton = ({ id, label, isSelected, onCheckboxChange, buttonbackground }) => (
+const TagsFilterButton = React.memo(({ id, label, isSelected, onCheckboxChange, buttonbackground }) => {
+  
+  const test = React.useRef(buttonbackground);
+
+  console.log("button rendering")
+  
+  return (
   <label 
     className={isSelected ? 'tagsfilterbutton' : 'tagsfilterbuttonSelected'} 
     id={id}
     >
-    <img src={buttonbackground} alt="featured drawing"></img>
+    <img src={test.current} alt="featured drawing"></img>
     <input
       type="checkbox"
       name={label}
@@ -15,6 +21,7 @@ const TagsFilterButton = ({ id, label, isSelected, onCheckboxChange, buttonbackg
       />
     {label}
   </label>
-);
+  )
+});
 
 export default TagsFilterButton;

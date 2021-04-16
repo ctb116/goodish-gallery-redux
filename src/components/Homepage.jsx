@@ -38,7 +38,7 @@ class Homepage extends Component {
         filter[key] = !filter[key];
       }
     }
-    this.setState({ tasFilter: filter });
+    this.setState({ tagsFilter: filter });
   };
 
   render() {
