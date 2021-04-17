@@ -3,6 +3,7 @@ import ReactModal from "./prebuilt/ReactModal";
 import GetArt from "./GetArt/GetArt";
 import "../styles/homepage.css";
 import NavbarTop from "./NavbarTop";
+import EnhancedBanner from './GetArt/Banner';
 
 class Homepage extends Component {
   state = {
@@ -15,7 +16,6 @@ class Homepage extends Component {
       fanart: false,
       mature: false,
     },
-    tagsFilter: { mature: true, commission: false, fanart: false },
     modal: false,
   };
 
@@ -49,11 +49,7 @@ class Homepage extends Component {
         <div className="homepage">
           <p>Giant Wall of Art</p>
         </div>
-        <GetArt
-          tagsFilter={this.state.tagsFilter}
-          onCheckboxChange={this.handleCheckboxChange}
-          handleView={this.handleView}
-        />
+        <EnhancedBanner/>
         <ReactModal
           image={this.state.viewImage}
           modal={this.state.modal}

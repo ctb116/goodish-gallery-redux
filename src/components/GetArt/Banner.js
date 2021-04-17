@@ -1,4 +1,5 @@
 import React from "react";
+import GetArtHOC from './GetArt';
 import "../../styles/banner.css";
 
 const Banner = (props) => {
@@ -10,4 +11,6 @@ const Banner = (props) => {
   );
 };
 
-export default Banner;
+const EnhancedBanner = GetArtHOC(Banner)
+
+export default EnhancedBanner;
