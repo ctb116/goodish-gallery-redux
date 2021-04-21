@@ -1,17 +1,24 @@
 import React from "react";
+import { useSelector } from 'react-redux';
+import { useFirestoreConnect } from 'react-redux-firebase';
 
-const TagsFilterButton = React.memo(({ id, label, isSelected, onCheckboxChange, buttonbackground }) => {
+const TagsFilterButton = ({ id, label, isSelected, onCheckboxChange, buttonbackground }) => {
   
-  const test = React.useRef(buttonbackground);
+  useFirestoreConnect([
+    { type: 'once', collection: "allImages", }
+  ])
 
-  console.log("button rendering")
-  
+  const images = useSelector((state) => state.firestore.ordered.allImages);
+  const fanartFilter = images.filter((image) => image.tags.fanart === true);
+  let fanartRandom = fanartFilter[Math.floor(Math.random() * fanartFilter.length)];
+
+
   return (
   <label 
     className={isSelected ? 'tagsfilterbutton' : 'tagsfilterbuttonSelected'} 
     id={id}
     >
-    <img src={test.current} alt="featured drawing"></img>
+    <img src={fanartRandom.imgUrl} alt="featured drawing"></img>
     <input
       type="checkbox"
       name={label}
@@ -22,6 +29,6 @@ const TagsFilterButton = React.memo(({ id, label, isSelected, onCheckboxChange, 
     {label}
   </label>
   )
-});
+};
 
 export default TagsFilterButton;
