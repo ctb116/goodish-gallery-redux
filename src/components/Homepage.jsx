@@ -17,7 +17,15 @@ class Homepage extends Component {
     },
     tagsFilter: { mature: true, commission: false, fanart: false },
     modal: false,
+    number: 1
   };
+
+  componentDidMount() {
+    let random = Math.floor(Math.random() * 2);
+
+    this.setState({number: random})
+
+  }
 
   toggle = () => {
     this.setState((prevState) => ({
@@ -42,7 +50,7 @@ class Homepage extends Component {
   };
 
   render() {
-    console.log(this.state.tagsFilter)
+    console.log(this.state.number)
     return (
       <React.Fragment>
         <NavbarTop />
@@ -53,6 +61,7 @@ class Homepage extends Component {
           tagsFilter={this.state.tagsFilter}
           onCheckboxChange={this.handleCheckboxChange}
           handleView={this.handleView}
+          random={this.state.number}
         />
         <ReactModal
           image={this.state.viewImage}

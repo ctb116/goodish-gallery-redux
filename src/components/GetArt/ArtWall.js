@@ -1,12 +1,14 @@
 import React from "react";
 import Image from "./Image";
 
-const ArtWall = (props) => {
+const ArtWall = ({images, handleView}) => {
   return (
     <div className="grid">
-      {props.images.map((image) => (
-        <Image image={image} onView={props.handleView} key={image.id} />
-      ))}
+      {
+        Object.keys(images).map((key) => (
+          <Image image={images[key].imgUrl} onView={handleView} key={key} />
+        ))
+      }
     </div>
   );
 };

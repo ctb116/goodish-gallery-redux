@@ -6,8 +6,8 @@ const Image = (props) => {
     <div>
       <img
         className="grid-image"
-        src={props.image.imgUrl}
-        alt={props.image.name}
+        src={props.image}
+        alt={"bunny"}
         onClick={() => props.onView(props.image)}
       />
     </div>
