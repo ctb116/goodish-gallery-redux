@@ -16,7 +16,8 @@ import "./styles/index.css";
 //Access with getState()
 //update state with help from reducers and dispatch()
 
-const store = createStore(rootReducer);
+const initialState = {}
+const store = createStore(rootReducer, initialState);
 
 //imported firebase config
 const rrfProps = {
@@ -26,7 +27,7 @@ const rrfProps = {
     userProfile: "users",
   },
   dispatch: store.dispatch,
-  createFirestoreInstance,
+  createFirestoreInstance,  // <- need if using firestore
 };
 
 ReactDOM.render(

@@ -1,8 +1,8 @@
-import { combineReducers } from "redux";
-import { firestoreReducer } from "redux-firestore";
+import { combineReducers, createStore } from "redux";
+import { firestoreReducer } from "redux-firestore";  // firestoreReducer for using firestore
 
 export const rootReducer = combineReducers({
-  firestore: firestoreReducer,
+  firestore: firestoreReducer,  //need if using firestore
 });
 
 //This reducer manages communication with Firebase

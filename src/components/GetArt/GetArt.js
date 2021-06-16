@@ -35,7 +35,6 @@ const GetArt = (props) => {
   if (isLoaded(images)) {
     const bannerFilter = images.filter((image) => image.tags.banner === true);
   
-    console.log(props.tagsFilter)
     
     // console.log(filterImages(images, props.tagsFilter))
     
@@ -66,7 +65,7 @@ const GetArt = (props) => {
       // };
 
       var filtered = Object.filter(testimages, tag => tag.tags.fanart === true); 
-      console.log(filtered);
+
 
 
 
@@ -78,7 +77,6 @@ const GetArt = (props) => {
           <TagsFilterList
             checkboxObj={props.tagsFilter}
             onCheckboxChange={props.onCheckboxChange}
-            buttonbackground={fanartRandom.imgUrl}
           />
         </div>
         <ArtWall images={filtered} handleView={props.handleView} />

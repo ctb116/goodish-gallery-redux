@@ -39,7 +39,6 @@ class Homepage extends Component {
   };
 
   handleCheckboxChange = (name) => {
-    console.log(name);
     let filter = this.state.tagsFilter;
     for (let key in filter) {
       if (key === name) {
@@ -50,7 +49,6 @@ class Homepage extends Component {
   };
 
   render() {
-    console.log(this.state.number)
     return (
       <React.Fragment>
         <NavbarTop />
