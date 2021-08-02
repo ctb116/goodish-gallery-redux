@@ -1,44 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import { createStore } from "redux";
-import { Provider } from "react-redux";
-import { rootReducer } from "./reducers/index";
-import { ReactReduxFirebaseProvider } from "react-redux-firebase";
-import { createFirestoreInstance } from "redux-firestore";
-import firebase from "./firebase";
+import { FirebaseAppProvider } from 'reactfire';
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/index.css";
 
-//Redux store holds application state as single source of truth.
-//Access with getState()
-//update state with help from reducers and dispatch()
-
-const store = createStore(rootReducer);
-
-//imported firebase config
-const rrfProps = {
-  firebase,
-  config: {
-    //any data on users will be stored ina collection called users
-    userProfile: "users",
-  },
-  dispatch: store.dispatch,
-  createFirestoreInstance,
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID 
 };
 
+
 ReactDOM.render(
-  //entry point for store to be able through application
-  //Provider offer all children access to connect()
-  <Provider store={store}>
-    <ReactReduxFirebaseProvider {...rrfProps}>
+    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </ReactReduxFirebaseProvider>
-  </Provider>,
+    </FirebaseAppProvider>,
   document.getElementById("root")
 );
 
