@@ -1,7 +1,10 @@
+Restarted project to remove Redux [here](https://github.com/ctb116/goodish-gallery) after learning about [ReactFire](https://github.com/ctb116/do-you-like-this-burrito)
+
+***
+***
 # Goodish Gallery
 
 By _**Cathy T Bradley**_</br>
-Contact: _**cathytbradley116@gmail.com**_</br>
 
 ## Description
 
